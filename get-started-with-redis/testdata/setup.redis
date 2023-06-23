@@ -13,4 +13,4 @@ HSET "player:9" name Ighteatia score 0 team Snarkdumbthimble challenges_complete
 SADD "team:Dorkfoot" Sykios Nidios Tiaitia
 SADD "team:Knucklewimp" Belaeos Polytia Moritia
 SADD "team:Snarkdumbthimble" Daryos Blalios Ighteatia
-ZADD "challenges" 1 "Enter the hidden dungeon" 2 "Find the chicken coop" 3 "Defeat the goblins" 4 "Rescue the chicken" 5 "Escape the dungeon"
+ZADD "challenges" 1 "Enter the hidden dungeon" 2 "Find the chicken coop" 3 "Defeat the goblins" 4 "Rescue the chickens" 5 "Escape the dungeon"
