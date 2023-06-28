@@ -61,7 +61,7 @@ func main() {
 		// Is this func invoked from a panic?
 		if r := recover(); r != nil {
 			// Yes: recover from the panic
-			log.Printf("Recovering from error `%v`\n", r)
+			log.Printf("Recovering from error '%v'\n", r)
 			// ...
 		}
 	}()
