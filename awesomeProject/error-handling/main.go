@@ -48,4 +48,20 @@ func main() {
 	if errors.As(err, &target) {
 		fmt.Printf("err as PathError: path is '%s'\n", target.Path)
 	}
+
+	// Recover from a panic
+
+	defer func() {
+		// Is this func invoked from a panic?
+		if r := recover(); r != nil {
+			// Yes: recover from the panic
+			fmt.Println("Recovering")
+			// ...
+		}
+	}()
+
+	// isValidPath panics because of an invalid regexp.
+	if isValidPath("/path/to/file") {
+		_, _ = ReadFile("/path/to/file")
+	}
 }
