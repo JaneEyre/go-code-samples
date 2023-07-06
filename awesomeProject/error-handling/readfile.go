@@ -20,6 +20,8 @@ func ReadFile(path string) ([]byte, error) {
 		// method "func Unwrap() error" implemented.
 		return nil, fmt.Errorf("open failed: %w", err)
 	}
+	defer f.Close()
+
 	buf, err := io.ReadAll(f)
 	if err != nil {
 		return nil, fmt.Errorf("read failed: %w", err)
