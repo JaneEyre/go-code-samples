@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RedisDemo 5: transaction" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="get-started-with-redis" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="transaction" />
+    <kind value="PACKAGE" />
+    <package value="github.com/JetBrains/go-code-samples/get-started-with-redis" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>
