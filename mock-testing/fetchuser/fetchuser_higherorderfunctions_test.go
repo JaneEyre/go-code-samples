@@ -7,7 +7,7 @@ import (
 func TestProcessUser_HigherOrderFunctions(t *testing.T) {
 	user := User{ID: 1, Name: "Alice"}
 
-	var mockFetcher fetchFunc = func(url string, id int) (User, error) {
+	var mockFetcher FetchDataFunc = func(url string, id int) (User, error) {
 		return user, nil
 	}
 
