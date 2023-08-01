@@ -4,19 +4,14 @@ import (
 	"testing"
 )
 
-type FetchDataFunc func(id int) (User, error)
-
-func (f FetchDataFunc) FetchData(id int) (User, error) {
-	return f(id)
-}
-
 func TestProcessUser_HigherOrderFunctions(t *testing.T) {
 	user := User{ID: 1, Name: "Alice"}
-	var mockFetcher FetchDataFunc = func(id int) (User, error) {
+
+	var mockFetcher fetchFunc = func(url string, id int) (User, error) {
 		return user, nil
 	}
 
-	result, err := ProcessUser(mockFetcher, 1)
+	result, err := ProcessUserHOF(mockFetcher, "noURL", 1)
 	if err != nil {
 		t.Errorf("Unexpected error: %v", err)
 	}
