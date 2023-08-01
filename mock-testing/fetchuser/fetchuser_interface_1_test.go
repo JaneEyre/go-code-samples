@@ -4,17 +4,17 @@ import (
 	"testing"
 )
 
-type MockInterfaceFetcher1 struct{}
-
-var user = User{ID: 1, Name: "Alice"}
-
-func (m *MockInterfaceFetcher1) FetchData(_ int) (User, error) {
-	return user, nil
+type MockInterfaceFetcher struct {
+	u User
 }
 
-func TestProcessUser_InterfaceMock1(t *testing.T) {
+func (m *MockInterfaceFetcher) FetchData(_ int) (User, error) {
+	return m.u, nil
+}
 
-	result, err := ProcessUser(&MockInterfaceFetcher1{}, 1)
+func TestProcessUser_InterfaceMock(t *testing.T) {
+	user := User{ID: 1, Name: "Alice"}
+	result, err := ProcessUser(&MockInterfaceFetcher{user}, 1)
 	if err != nil {
 		t.Errorf("Unexpected error: %v", err)
 	}
