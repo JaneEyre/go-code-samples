@@ -7,7 +7,7 @@ package fetchuser
 import (
 	reflect "reflect"
 
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 )
 
 // MockAPIFetcher is a mock of APIFetcher interface.
