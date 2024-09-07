@@ -10,7 +10,8 @@ func main() {
 
 	// Register the routes and handlers
 	mux.Handle("/", &homeHandler{})
-
+	mux.Handle("/recipes", &RecipesHandler{})
+	mux.Handle("/recipes/", &RecipesIDHandler{})
 	// Run the server
 	http.ListenAndServe(":8080", mux)
 }
@@ -19,4 +20,16 @@ type homeHandler struct{}
 
 func (h *homeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("This is my home page"))
+}
+
+type RecipesHandler struct{}
+
+func (h *RecipesHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("This is my recipe page"))
+}
+
+type RecipesIDHandler struct{}
+
+func (h *RecipesIDHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("This is my recipe ID page"))
 }
